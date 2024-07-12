@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: test-nodejs-template
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: test-nodejs-template 
+  name: test-nodejs-template
+spec:
+  ports:
+  - port: 3001 
+    targetPort: 3001 
+  selector:
+    app.kubernetes.io/instance: test-nodejs-template 

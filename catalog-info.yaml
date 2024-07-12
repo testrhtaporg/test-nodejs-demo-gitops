@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: test-nodejs-template-gitops
+  description: This is GitOps manifest for test-nodejs-template   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: test-nodejs-template
+    janus-idp.io/tekton: test-nodejs-template 
+    backstage.io/kubernetes-id: test-nodejs-template 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:test-nodejs-template
